@@ -1,1 +1,25 @@
-<p>static-info works!</p>
+<div class="card">
+    <div *ngIf="selectedState" class="card-body" click="">
+        <h1>State Statistics for {{ selectedState.region }}</h1>
+        <h5 class="card-title">Immunization Measure</h5>
+        <p class="card-text">
+            {{ selectedState.immunization_measure }}
+        </p>
+        <h5 class="card-title">Reportable Results</h5>
+        <p class="card-text">
+            {{ selectedState.reportable_lab_results_measure }}
+        </p>
+        <h5 class="card-title">Syndromatic Measure</h5>
+        <p class="card-text">
+            {{ selectedState.syndromic_surveillance_measure }}
+        </p>
+        <h5 class="card-title">Registry Measure</h5>
+        <p class="card-text">
+            {{ selectedState.registry_measure }}
+        </p>
+        <h5 class="card-title">Stage 1 Hospital Measure</h5>
+        <p class="card-text">
+            {{ selectedState.stage_1_hospitals_all_measures }}
+        </p>
+    </div>
+</div>

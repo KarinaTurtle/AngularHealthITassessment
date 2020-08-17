@@ -1,1 +1,18 @@
-<p>select-state works!</p>
+<div class="card" style="width: 18rem;">
+    <h3>Period Year: 2015</h3>
+    <div class="card-body">
+        <div class="dropdown">
+            <p>Please Select the State:</p>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        State
+      </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div *ngFor="let state of users$" [ngvalue]="state.region_code">
+                    <p *ngIf="state.period === '2015'" class="dropdown-item" (click)="onClick(state)">
+                        {{ state.region }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
