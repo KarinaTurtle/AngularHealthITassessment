@@ -1,18 +1,8 @@
 <div class="card" style="width: 18rem;">
     <h3>Period Year: 2015</h3>
-    <div class="card-body">
-        <h5 class="card-title">Select State</h5>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        State
-      </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div *ngFor="let user of users$">
-                    <p *ngIf="user.period === '2015'" class="dropdown-item">
-                        {{ user.region }}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <select [(ngModel)]="stateSelected" style="margin: auto; width: 50%; border: 2px;" name="" id="">
+    <option *ngFor="let state of users$" [value]="state.region_code">
+      <span *ngIf="state.period === '2015'">{{ state.region }}</span>
+    </option>
+  </select>
 </div>

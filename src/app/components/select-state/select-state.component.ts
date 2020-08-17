@@ -9,9 +9,14 @@ import { DataService } from '../../data.service';
 })
 export class SelectStateComponent implements OnInit {
   users$: User[];
+  statePicked: [];
+  stateSelected: string;
+
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
+    this.stateSelected = 'TX';
+
     return this.dataService
       .getUsers()
       .subscribe((data) => (this.users$ = data));

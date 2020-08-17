@@ -7,6 +7,8 @@ import { SelectStateComponent } from './components/select-state/select-state.com
 import { ChartComponent } from './components/chart/chart.component';
 import { StaticInfoComponent } from './components/static-info/static-info.component';
 
+import { FormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 
@@ -17,7 +19,7 @@ import { DataService } from './data.service';
     ChartComponent,
     StaticInfoComponent,
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [DataService],
   bootstrap: [AppComponent],
 })
