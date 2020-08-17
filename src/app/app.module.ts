@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { FusionChartsModule } from 'angular-fusioncharts';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { DataService } from './data.service';
     ChartComponent,
     StaticInfoComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule, FusionChartsModule],
   providers: [DataService],
   bootstrap: [AppComponent],
 })

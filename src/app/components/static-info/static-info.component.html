@@ -1,27 +1,25 @@
 <div class="card">
-    <!-- <h5 class="card-header" [(ngModel)]="stateSelected">
-        Selected State: {{ stateSelected }}
-    </h5> -->
-    <div class="card-body">
-        <h5 class="card-title">At least One Measure</h5>
+    <div *ngIf="selectedState" class="card-body" click="">
+        <h1>State Statistics for {{ selectedState.region }}</h1>
+        <h5 class="card-title">Immunization Measure</h5>
         <p class="card-text">
-            something
-        </p>
-        <h5 class="card-title">Immunization measure</h5>
-        <p class="card-text">
-            something
+            {{ selectedState.immunization_measure }}
         </p>
         <h5 class="card-title">Reportable Results</h5>
         <p class="card-text">
-            something
+            {{ selectedState.reportable_lab_results_measure }}
         </p>
         <h5 class="card-title">Syndromatic Measure</h5>
         <p class="card-text">
-            something
+            {{ selectedState.syndromic_surveillance_measure }}
         </p>
         <h5 class="card-title">Registry Measure</h5>
         <p class="card-text">
-            something
+            {{ selectedState.registry_measure }}
+        </p>
+        <h5 class="card-title">Stage 1 Hospital Measure</h5>
+        <p class="card-text">
+            {{ selectedState.stage_1_hospitals_all_measures }}
         </p>
     </div>
 </div>

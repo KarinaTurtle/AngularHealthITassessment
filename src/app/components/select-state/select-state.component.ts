@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../HealthIT.model';
 import { DataService } from '../../data.service';
+import { CommunicatorService } from '../../communicator.service';
 
 @Component({
   selector: 'app-select-state',
@@ -9,16 +10,18 @@ import { DataService } from '../../data.service';
 })
 export class SelectStateComponent implements OnInit {
   users$: User[];
-  statePicked: [];
-  stateSelected: string;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private _communicator: CommunicatorService
+  ) {}
 
   ngOnInit() {
-    this.stateSelected = 'TX';
-
     return this.dataService
       .getUsers()
       .subscribe((data) => (this.users$ = data));
+  }
+  onClick(event) {
+    this._communicator.updateState(event);
   }
 }
